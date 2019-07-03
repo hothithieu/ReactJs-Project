@@ -6,12 +6,14 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "availity-reactstrap-validation": "^2.5.4",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-native-slideshow": "^1.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.0",
     "redux": "^4.0.1"
   },
   "scripts": {
@@ -34,5 +36,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "sinon": "^7.3.2"
   }
 }

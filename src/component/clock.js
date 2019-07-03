@@ -27,8 +27,6 @@ class Clock extends Component {
           {this.state.time}.
         </div>
       </div>
-       
-      
     );
   }
 }
