@@ -2,6 +2,11 @@
 	background: url("https://cdn.pixabay.com/index/2019/06/20/10-58-01-525_1440x480.jpg");
 	/* background: no-repeat; */
 	/* background-size: cover; */
+/***************************************************menu letf top*********************************************************/
+.header .menu-left a:hover {
+	color: #fff;
+	/* background-color:black; */
+}
 
 .header{
 	background: url("https://cdn.pixabay.com/index/2019/06/20/10-58-01-525_1440x480.jpg");
@@ -12,15 +17,16 @@
 	margin-left: 0px;
 	margin-right: 0px;
 	height: 500px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .header .bg-light {
 	background-color: transparent !important;
 
 }
-.header .navbar-light .navbar-nav .nav-link {
+/* .header .navbar-light .navbar-nav .nav-link {
 
 	color: white;
-}
+} */
 
 .header a {
 	color: #fff;
@@ -48,29 +54,37 @@ h9 {
 	margin-top: 0px;
 	padding-top: 0px;
 }
-
+.logo img{
+	margin-top: 0px;
+	padding-top: 0px;
+}
 h9 a:hover {
  color: goldenrod;
 } 
+.logo img {
+	margin-top: -36px;
+	padding-top: 0px;
+}
 /******************************************************************content************************************************************************/
 .content{
-	width: 100%;
-}
-
-.content .img{
+	width: 100%;	font-family: Arial, Helvetica, sans-serif;
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-top: 15px;
-	padding-bottom: 15px;
 }
+/* .content .img{
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 10px;
+padding-bottom: 10px;
+}  */
 .txt {
-  width: 87%;
+  width: 100%;
   /*height: 100%;  full cả ảnh */
   background-color: black;
   position: absolute;
-  bottom:70px;
+  bottom:54px;
   text-align: center;
-  color: white;
+	color: white;
   padding:10px;
   box-sizing: border-box;
   opacity: 0;
@@ -80,7 +94,26 @@ h9 a:hover {
   transform: translateY(53px);
   transition:ease-in-out 0.5s;
 }
-
+.conten-imga {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+span:hover {
+	cursor: context-menu;
+	color: orange;
+}
+/* .conten-imga .conten-imga a{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0%;
+	padding-right: 0%;
+	} */
+/* .imges{
+	padding-left: 0px;
+  padding-right: 0px;
+} */
 
 /*************************************************************footer**************************************************************************/
 .footer{
@@ -123,13 +156,18 @@ li{
 	margin-left: 0px;
 	margin-right: 0px;
 	height: 500px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .header-intro .bg-light {
 	background-color: transparent !important;
 
 }
+.header-intro .menu-left a:hover {
+	color: #fff;
+	/* background-color: #fff */
+}
 .header-intro .navbar-light .navbar-nav .nav-link {
-
+	font-family: Arial, Helvetica, sans-serif;
 	color: white;
 }
 .header-intro a {
@@ -189,6 +227,7 @@ background-color: darkgreen;
 } */
 
 /***********************************************************help********************************************************************************/
+
 .header-help{
 	background: url("https://cdn.pixabay.com/photo/2019/06/12/11/03/boat-4269033__340.jpg");
 	/* background: no-repeat; */
@@ -198,17 +237,23 @@ background-color: darkgreen;
 	margin-left: 0px;
 	margin-right: 0px;
 	height: 500px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .header-help .bg-light {
 	background-color: transparent !important;
 
 }
+.header-help .menu-left a:hover {
+	color: #fff;
+	/* background-color: rgb(73, 73, 73)*/
+} 
 .header-help .navbar-light .navbar-nav .nav-link {
-
+	font-family: Arial, Helvetica, sans-serif;
 	color: white;
 }
 .header-help a {
 	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-help .searchButton{
@@ -225,6 +270,7 @@ background-color: darkgreen;
 }
 
 /*****************************************************************************contact*************************************************************************/
+
 .Contact-header{
 	background: url("https://cdn.pixabay.com/photo/2019/06/25/04/40/light-4297386__340.jpg");
 	/* background: no-repeat; */
@@ -234,19 +280,23 @@ background-color: darkgreen;
 	margin-left: 0px;
 	margin-right: 0px;
 	height: 500px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .Contact-header .bg-light {
 	background-color: transparent !important;
-
 }
 .Contact-header .navbar-light .navbar-nav .nav-link {
-
 	color: white;
+	font-family: Arial, Helvetica, sans-serif;	
 }
 .Contact-header a {
 	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
 }
-
+.Contact-header .menu-left a:hover {
+	color: #fff;
+	/* background-color: #fff */
+}
 .Contact-header .searchButton{
 	background-color: #fff;
 	border-radius: 2px;	
@@ -258,10 +308,63 @@ background-color: darkgreen;
 .contact-text{
 	padding-top: 90px;
 }
-.conten-Help Button{
+.conten-Contact Button{
 	background-color:green;
 }
+.conten-Contact{
+	font-family: Arial, Helvetica, sans-serif;
+	background-size: cover;
+}
+/*********************************************detail************************************/
+.mainDetail{
 
+}
+.headerDetail{
+	background-color: white;
+	/* border-bottom: 1px solid gray; */
+}
+.logo{
+	top: 20px;
+}
+.search {
+	top: 20px;
+}
+.button{
+	top: 20px;
+}
+.conten-imgDetai{
+	padding-left: 10px;
+}
+.imgDetail .row{
+	align-content: center;
+}
+.button Button{
+	color: #fff;
+	background-color: green;
+	border-color: #6c757d;
+}
+.lits .List-Group-Item {
+	background-color: green;
+}
+.txtDetail {
+  width: 93%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  bottom:54px;
+  text-align: center;
+	color: white;
+  padding:10px;
+  box-sizing: border-box;
+	opacity: 0;
+}
+.img:hover div.txtDetail {
+  opacity: 0.5;
+  transform: translateY(53px);
+	transition:ease-in-out 0.5s;
+	align-content: center;
+	text-align: center;
+}
 /************************************************************hiieu úng cho hình ảnh *****************************************/
 
 /* .imge-introduce {
@@ -280,3 +383,15 @@ background-color: darkgreen;
 .imge-introduce img:hover {
 	transform: scale(1.2);
 } */
+
+/****************************************** responsive *******************************************************/
+/* .col-3 {
+	flex: 0 0 100%;
+	max-width: 100%;
+} */
+
+/******************************************error_page*********************************************************/
+.mainError .notFound p{
+	color: brown;
+}
+

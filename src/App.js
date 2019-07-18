@@ -6,22 +6,33 @@ import content from './component/content';
 import Introduce from './component/introduce';
 import Help from './component/help';
 import Contact from './component/contact';
-import Slider from './component/slider';
-// import Clock from './component/clock';
+import  Errorpage  from './component/errorPage';
+import Menu from './component/menu';
+import Detail from './component/detail';
+import { Switch} from 'react-router-dom'
 class shownWeb extends Component{
 	
 	render() { 
 		return (
 			<div>
 				<BrowserRouter>
-					<Route exact path= '/' component = {content}/>
-					<Route exact path= '/introduce' component = {Introduce}/> 
-					<Route exact path= '/help' component = {Help}/> 
-					<Route exact path= '/contact' component = {Contact}/> 
+					<Route  path= '/' exact component = {content}/>
+					<Route  path= '/introduce' exact component = {Introduce}/> 
+					<Route  path= '/help' exact component = {Help}/> 
+					<Route path= '/contact' exact component = {Contact}/> 
+					<Route path= '/errorPage' exact component = { Errorpage }/>
+					<Route path= '/menu' exact component = { Menu }/>
+					<Route path='/detail/:id' exact component={Detail} />
+					
+					{/* path:'/detail/:id',
+					exact:false,
+					main: ({match}) => <Detail match={match}/> */}
 				</BrowserRouter>
+				
 			</div>
 		);
 	} 
 }
+
 
 export default shownWeb ;

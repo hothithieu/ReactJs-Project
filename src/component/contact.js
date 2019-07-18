@@ -2,10 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'reactstrap';
-import {  Navbar, Nav, NavItem, NavLink, UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem } from 'reactstrap';
+import {  Navbar, Nav, NavItem, NavLink, UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem,InputGroupText } from 'reactstrap';
 import { InputGroup, InputGroupAddon,Input } from 'reactstrap';
 import { Button } from 'reactstrap';
 import {Form, FormGroup, Label, FormText } from 'reactstrap';
+import {BrowserRouter as Router,Route,Link,} from 'react-router-dom'
+import Menu  from './menu';
 
 export default class Contact extends React.Component{
   render(){
@@ -20,36 +22,36 @@ export default class Contact extends React.Component{
          </a>
           </Col>
           <Col xs="6">
-              <Navbar color="light" light expand="md" >
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink href="/">Home</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="/introduce">Introduce</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="/help">Help</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="/contact">Contact Us</NavLink>
-                  </NavItem>
-                </Nav>
-              </Navbar>
-          </Col>   <p><p></p></p>
+              <Menu />
+          </Col>   <p><p></p></p> 
         </Row> <p><p></p></p>
         <Row >   <p><p></p></p>
           <Col sm=" 12" md={{ size: 6, offset: 3 }} >
             <div className="slogan">
-              <center><p><h2>Stunning free images & royalty free stock</h2></p>
+              <center><p><h4>Stunning free images & royalty free stock</h4></p>
               <h5>Stunning free images & royalty free stock</h5><p></p>
-              
-              <InputGroup>
-                <Button color="#FFFFFF" className="searchButton" ><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="lg"/></Button>{' '}
-                <Input placeholder="What is the photo you want?" />
-                <InputGroupAddon addonType="append">image</InputGroupAddon>
-              </InputGroup>
-              <h9>Popular images: mother's day, wallpaper, wielkanoc, summer, business, mother day, beach, food, nature</h9><p></p>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                    <InputGroupText ><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="1,5x"/></InputGroupText> 
+                      {/* <InputGroupText  className="searchButton" type="submit" value="Submit"><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="1,5x"/></InputGroupText> */}
+                    </InputGroupAddon>
+                    <Input placeholder="What is the photo you want ?" type="search" name="search" id="exampleSearch"/>
+                    <InputGroupAddon addonType="append">
+                      <InputGroupText>image</InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+                  <h9>Popular images: 
+                
+                  <a href="/"> Travel, </a>
+                  <a href="/">science, </a>
+                  <a href="/">education, </a>
+                  <a href="/">education, </a>
+                  <a href="/">people, </a>
+                  <a href="/">feelings, </a>
+                  <a href="/">health,... </a>
+           
+              </h9><p></p>
+
               </center>
             </div>
           </Col>
@@ -62,7 +64,7 @@ export default class Contact extends React.Component{
           </Col>
         </Row>
         </div>
-        <div className="conten-Help">
+        <div className="conten-Contact">
           <Row>
             <Col sm=" 12" md={{ size: 6, offset: 3 }} >
                 <div className="bt-intro">
