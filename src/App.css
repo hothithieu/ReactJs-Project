@@ -71,12 +71,7 @@ h9 a:hover {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-/* .content .img{
-padding-left: 0px;
-padding-right: 0px;
-padding-top: 10px;
-padding-bottom: 10px;
-}  */
+
 .txt {
   width: 100%;
   /*height: 100%;  full cả ảnh */
@@ -104,16 +99,6 @@ span:hover {
 	cursor: context-menu;
 	color: orange;
 }
-/* .conten-imga .conten-imga a{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 0%;
-	padding-right: 0%;
-	} */
-/* .imges{
-	padding-left: 0px;
-  padding-right: 0px;
-} */
 
 /*************************************************************footer**************************************************************************/
 .footer{
@@ -319,6 +304,10 @@ background-color: darkgreen;
 .mainDetail{
 
 }
+.relatedImg{
+	padding-top: 10px;
+	padding-left: 0!important;
+}
 .headerDetail{
 	background-color: white;
 	/* border-bottom: 1px solid gray; */
@@ -343,11 +332,14 @@ background-color: darkgreen;
 	background-color: green;
 	border-color: #6c757d;
 }
-.lits .List-Group-Item {
+.lits .List-Group-Item  {
 	background-color: green;
 }
+.lits .m  {
+	margin-left: 20px;
+}
 .txtDetail {
-  width: 93%;
+  width: 94.5%;
   height: 100%;
   background-color: black;
   position: absolute;
@@ -365,6 +357,9 @@ background-color: darkgreen;
 	align-content: center;
 	text-align: center;
 }
+/* .textDetail p{
+	color: black;
+} */
 /************************************************************hiieu úng cho hình ảnh *****************************************/
 
 /* .imge-introduce {

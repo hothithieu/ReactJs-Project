@@ -30,6 +30,28 @@ export default class Detail extends React.Component{
   //  console.log(455555,colImg)
     // console.log(222221,this.props)
     /* kiểm tra dư liệu từ trang chủ ra trang chi tiết--> nếu ok thì --> lấy biến "imageDetail" hiện thị nơi url  */
+
+
+
+
+/*ở trang chính trang home  */
+    {/* <Link to={{
+          pathname: `/detail/${image.id}`,
+          state : {
+            fromNotifications: image.largeImageURL,
+          }
+        }}>  */}
+
+
+
+ // console.log(455665565, 'this.state.hits')
+    // console.log(this.state.hit, 'hits')
+    // const array = [{name: 'abc', tag: 'a'}, {name: 'abdđc', tag: 'a'}, {tag: 'b'}, {tag: 'c'}]
+    // const results = array.filter(item => item.tag === 'a')
+    // const array= this.hit.tags.split(",");
+    // console.log(results)
+
+    
     let imageDetail = this.props && this.props.location &&  
                       this.props.location.state && 
                       this.props.location.state.fromNotifications && 

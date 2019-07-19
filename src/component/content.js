@@ -44,7 +44,6 @@ class Content extends React.Component{
   }
   componentDidMount(){
     /***fetch(API tức là gọi API*(+'?key=' + key + '&q'=> từ khóa của chức năng search// this.state.search.search--> là lấy từ hàm contructor phần thí.state được nhập từ bàn phím rong quá trình tìm kiếm  *****/
-    // this.props.fetchAllPosts();
     this.apiSearch()
  
   }
@@ -74,18 +73,7 @@ class Content extends React.Component{
     let colImg = this.state.hits.map((image, index) => (
       <Col xs="12" sm="3" className="conten-imga" key={index}>
         <div className="img conten-imga" style={{ paddingLeft: '6px'}} >
-        {/* <Link to={'/detail/:id'}> */}
         <Link to={`/detail/${image.id}`}>
-        {/* <Link to={{pathname: `detail/${image.id}`, query: { id: image.id }}}> */}
-        {/* <Link to={'/detail/'+this.props.data.id}> */}
-        {/* <Link to={{
-          pathname: `/detail/${image.id}`,
-          state : {
-            fromNotifications: image.largeImageURL,
-          }
-        }}>  */}
-        
-          <a href="#">
             <div style={{
               /*******largeImageURL là giá trị được lấy về trong quá trình kiểm tra trong ứng dụng tải về postman********/
               background: `url('${image.largeImageURL}')`,
@@ -97,18 +85,15 @@ class Content extends React.Component{
               <Row>
                 <Col xs="6"><FontAwesomeIcon icon={faUser} style={{color:'rgb(33, 126, 184)'}} size="lg"/>{image.user}</Col>
                 <Col xs="6"><FontAwesomeIcon icon={faThumbsUp} style={{ color: 'blue' }} size="lg"/> {image.likes}  <FontAwesomeIcon icon={faHeart} style={{color:'red'}} sile="2x"/> {image.favorites}  <FontAwesomeIcon icon={faComment} style={{color:'blue'}}  size="lg"/> {image.comments}</Col>
-                {/* <h3>AMAZING CAPTION</h3>
-                <p>Whatever It Is - Always Awesome</p>  */}
               </Row>
             </div>
-          </a></Link>
+          </Link>
         </div>
       </Col>  
   ));
   
-    
   console.log(5555,colImg);
-  let categories = ['travel', 'animate','science','education', 'people', 'feelings', 'health']
+  let categories = ['travel', 'animate','science','education', 'river', 'mosel', 'health']
   let pageNumber=['1','2','3','4','5','6','7','8','9','10','11']
 
   return(
@@ -135,14 +120,13 @@ class Content extends React.Component{
                     <InputGroupAddon addonType="prepend">
                     <InputGroupText ><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="1,5x"/></InputGroupText> 
                       {/* <InputGroupText  className="searchButton" type="submit" value="Submit"><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="1,5x"/></InputGroupText> */}
-                    </InputGroupAddon>
+                    </InputGroupAddon>  
                     <Input placeholder="What is the photo you want ?" type="search" name="search" id="exampleSearch" value={this.state.search} onChange={this.handleChange}/>
                     <InputGroupAddon addonType="append">
                       <InputGroupText>image</InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
                   <h9>Popular images:  
-                
                   { categories.map(item => (
                     <span key={item} onClick={this.selectCaregory.bind(this, item)}> {item}, </span>
                   )) }
@@ -171,7 +155,7 @@ class Content extends React.Component{
         </div>
         </Row>
         <Row>
-          {/* {colImg}   */}
+        
          {this.state.hits.length===0 ? (
             <Col sm-12 md={{ size:6,offset:3}}>
               <div className="ogan">
@@ -183,7 +167,7 @@ class Content extends React.Component{
           }
         </Row><br />
         <Row>
-            <Col sm="12" md={{ size: 6, offset: 3 }} >
+            <Col sm="12" >
               <Pagination aria-label="Page navigation example">
                   <PaginationItem>
                     <PaginationLink previous href="#" />

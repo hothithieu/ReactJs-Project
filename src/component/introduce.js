@@ -66,7 +66,7 @@ export default class Introduce extends React.Component{
           <Row>
             <Col xs="6" className="imge-introduce">
               <div style={{
-                  background: `url('https://cdn.pixabay.com/photo/2018/12/16/20/46/wave-3879331__340.jpg')` ,
+                  background: `url('https://cdn.pixabay.com/photo/2017/06/22/23/40/picking-flowers-2432972__340.jpg')` ,
                     backgroundSize: 'cover',
                       height: '397px', 
                     }}>

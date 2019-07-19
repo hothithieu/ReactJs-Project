@@ -23,10 +23,6 @@ class shownWeb extends Component{
 					<Route path= '/errorPage' exact component = { Errorpage }/>
 					<Route path= '/menu' exact component = { Menu }/>
 					<Route path='/detail/:id' exact component={Detail} />
-					
-					{/* path:'/detail/:id',
-					exact:false,
-					main: ({match}) => <Detail match={match}/> */}
 				</BrowserRouter>
 				
 			</div>
