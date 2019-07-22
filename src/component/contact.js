@@ -23,9 +23,9 @@ export default class Contact extends React.Component{
           </Col>
           <Col xs="6">
               <Menu />
-          </Col>   <p><p></p></p> 
-        </Row> <p><p></p></p>
-        <Row >   <p><p></p></p>
+          </Col> <br /><br />
+        </Row> <br /><br />
+        <Row ><br /><br />
           <Col sm=" 12" md={{ size: 6, offset: 3 }} >
             <div className="slogan">
               <center><p><h4>Stunning free images & royalty free stock</h4></p>
@@ -41,7 +41,6 @@ export default class Contact extends React.Component{
                     </InputGroupAddon>
                   </InputGroup>
                   <h9>Popular images: 
-                
                   <a href="/"> Travel, </a>
                   <a href="/">science, </a>
                   <a href="/">education, </a>
@@ -49,9 +48,7 @@ export default class Contact extends React.Component{
                   <a href="/">people, </a>
                   <a href="/">feelings, </a>
                   <a href="/">health,... </a>
-           
               </h9><p></p>
-
               </center>
             </div>
           </Col>
@@ -65,13 +62,12 @@ export default class Contact extends React.Component{
         </Row>
         </div>
         <div className="conten-Contact">
-          <Row>
-            <Col sm=" 12" md={{ size: 6, offset: 3 }} >
+            <Row>
+              <Col sm=" 12" md={{ size: 6, offset: 3 }} >
                 <div className="bt-intro">
                 <center><Button> <h1>Let us know</h1>If you have some question</Button></center>
                 </div>
               </Col>
-
             </Row>  
             <Row>
               <Col sm=" 12" md={{ size: 6, offset: 3 }}  className="text-content-help">
@@ -151,7 +147,6 @@ export default class Contact extends React.Component{
               <center><Button> We will bring for you beautiful images</Button></center>
               </div>
             </Col>
-
           </Row>  
           <Row>
             <Col sm=" 12" md={{ size: 6, offset: 3 }}  className="text-content-help">

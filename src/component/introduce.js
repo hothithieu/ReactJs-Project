@@ -39,7 +39,6 @@ export default class Introduce extends React.Component{
                     </InputGroupAddon>
                   </InputGroup>
                   <h9>Popular images: 
-                
                   <a href="/"> Travel, </a>
                   <a href="/">science, </a>
                   <a href="/">education, </a>
@@ -47,9 +46,7 @@ export default class Introduce extends React.Component{
                   <a href="/">people, </a>
                   <a href="/">feelings, </a>
                   <a href="/">health,... </a>
-           
               </h9><p></p>
-
               </center>
             </div>
           </Col>
@@ -84,13 +81,11 @@ export default class Introduce extends React.Component{
             </Col><p></p><p></p>
           </Row><p></p><p></p>
           <Row>
-         
             <Col sm=" 12" md={{ size: 6, offset: 3 }} >
               <div className="bt-intro">
               <center><Button><div> We will bring for you beautiful images</div></Button></center>
               </div>
             </Col>
-
           </Row>  
           <Row>
             <Col xs="4" className="img-intro"> <div style={{
@@ -99,7 +94,6 @@ export default class Introduce extends React.Component{
                       height: '397px', 
                     }}>
                 </div>
-           
             </Col>
             <Col xs="4" className="img-intro">
               <div style={{

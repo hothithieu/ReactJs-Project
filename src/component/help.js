@@ -22,9 +22,9 @@ export default class Help extends React.Component{
           </Col>
           <Col xs="6">
               <Menu />
-          </Col>   <p><p></p></p> 
-        </Row> <p><p></p></p>
-        <Row >   <p><p></p></p>
+          </Col><p><p></p></p> 
+        </Row><p><p></p></p>
+        <Row ><p><p></p></p>
           <Col sm=" 12" md={{ size: 6, offset: 3 }} >
             <div className="slogan">
               <center><p><h4>Stunning free images & royalty free stock</h4></p>
@@ -40,7 +40,6 @@ export default class Help extends React.Component{
                     </InputGroupAddon>
                   </InputGroup>
                   <h9>Popular images: 
-                
                   <a href="/"> Travel, </a>
                   <a href="/">science, </a>
                   <a href="/">education, </a>
@@ -48,9 +47,7 @@ export default class Help extends React.Component{
                   <a href="/">people, </a>
                   <a href="/">feelings, </a>
                   <a href="/">health,... </a>
-           
               </h9><p></p>
-
               </center>
             </div>
           </Col>
@@ -75,13 +72,11 @@ export default class Help extends React.Component{
             </Col><p></p><p></p>
           </Row><p></p><p></p>
           <Row>
-         
             <Col sm=" 12" md={{ size: 6, offset: 3 }} >
               <div className="bt-intro">
               <center><Button> We will bring for you beautiful images</Button></center>
               </div>
             </Col>
-
           </Row>  
           <Row>
             <Col xs="4" className="img-intro"> <div style={{

@@ -1,11 +1,12 @@
 import React from 'react';
-import {Container, Row, Col,Button} from 'reactstrap';
+import {Container, Row, Col,Button,Dropdown, DropdownToggle} from 'reactstrap';
 import {} from 'reactstrap';
 import { InputGroup, InputGroupAddon, InputGroupText, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { ListGroup, ListGroupItem} from 'reactstrap';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import content from './content';
+import { saveAs } from 'file-saver';
 import {faSearch, faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons';
 const key = '12929393-7c6c13aaef3f6653c1c44878f'
 /******** địa chỉ api của hình ảnh trong trang web https://pixabay.com/api/docs/*********/
@@ -19,10 +20,9 @@ export default class Detail extends React.Component{
       hits:[],
       hit: null,
       search: '',
-      // category: '',
     };
   }
-  Imagedetail(){
+  fetchImagedetail(){
     let id = this.props.match && this.props.match.params ? this.props.match.params.id : '';
     if (id) {
       fetch(API + '?key=' + key + '&id=' + id)
@@ -41,6 +41,10 @@ export default class Detail extends React.Component{
       });
     }
   }
+  imageDownload(img){
+    saveAs(img, "image.jpg");
+  }
+
   /*text nhận giá trị từ relative để saerch những hình ảnh liên quan với chủ đề đầu khi dduocj lấy từ data.hits[0].tags.split(',') */
   FetchRelatedimages(text){
     fetch(API + '?key=' + key + '&q='+text)
@@ -54,7 +58,7 @@ export default class Detail extends React.Component{
     });
   }
   componentDidMount(){
-    this.Imagedetail()
+    this.fetchImagedetail()
     this.FetchRelatedimages()
   }
  
@@ -109,50 +113,54 @@ export default class Detail extends React.Component{
           <Col xs="6" sm="3" className="button">
             <Link to='/'><Button >Back</Button></Link>
           </Col>
-          
         </Row><br /><br />
         <Row>
-        <Col xs="12"sm="1"></Col>
-          <Col xs="12"sm="5" className="imgDetail">
-          <center>
-          <div className="img conten-imgDetai" style={{ paddingLeft: '6px'}}>
-          <Link to={'/detail/:id'}>
-                <div style={{
-                  /*imageDetail là biến so sách giá trị get về từ trang chủ để đổ tra trang chi tiết */
-                  /*${this.state.hit && this.state.hit.largeImageURL điều kiện tồn tại *//**(?) là để hỏi có hay ko *//**this.state.hit.largeImageURL : ''}')`, nếu đáp ứng if trên thì hiện thị */
-                  background: `url('${this.state.hit && this.state.hit.largeImageURL ? this.state.hit.largeImageURL : ''}')`,
-                    backgroundSize: 'cover',
-                      height: '500px', 
-                }}>
-                </div>
-                <div class="txtDetail"><br /><br /><br /><br /><br /><br /><br /><br />
-                     <center><h3>Free Download</h3>
-                     <FontAwesomeIcon icon={faAngleDoubleDown} sile="9x"/></center>
-                </div>
-              </Link>
-          </div>
-          </center>
-          </Col>
-          <Col xs="12" sm="5" className="imgDetail">
-            <Row className="row">
-              <Col xs="12" sm="11">
-                <center><ListGroup className="lits">
-                  <ListGroupItem className="List-Group-Item m "><h5>Related images</h5></ListGroupItem>
-                </ListGroup></center>
-              </Col>
-            </Row>
-            <Row className="row">
-                {colImg}  
-            </Row><br />
-            <Row className="row textDetail">
-              <Col xs="12" sm="11"><center>
-                <h7>There are images you can know and they can have you have some choice</h7><br />
-              <h7>We always bring your great pictures.</h7><br />
-              <h8>You just use house-image </h8>
-                    <h7>!!!</h7>
-                </center>
-              </Col>
-            </Row>
+          <Col xs="12"sm="1"></Col>
+            <Col xs="12"sm="5" className="imgDetail">
+            <center>
+            <div className="img conten-imgDetai" style={{ paddingLeft: '6px'}}>
+            <Link to={'/detail/:id'}>
+                  <div style={{
+                    /*${this.state.hit && this.state.hit.largeImageURL điều kiện tồn tại *//**(?) là để hỏi có hay ko *//**this.state.hit.largeImageURL : ''}')`, nếu đáp ứng if trên thì hiện thị */
+                    background: `url('${this.state.hit && this.state.hit.largeImageURL ? this.state.hit.largeImageURL : ''}')`,
+                      backgroundSize: 'cover',
+                        height: '500px', 
+                  }}>
+                  </div>
+                  <div class="txtDetail"><br /><br /><br /><br /><br /><br />
+                      <center><h3>Free Download</h3>
+                      Click here<p>
+                      <FontAwesomeIcon icon={faAngleDoubleDown} sile="9x"/></p>
+                      {/* {(()=> this.state.hit && console.log(this.state.hit.largeImageURL))()} */}
+                        <Button onClick={() => this.imageDownload(this.state.hit.largeImageURL)}>
+                          Download
+                        </Button>
+                      </center>
+                  </div>
+                </Link>
+            </div>
+            </center>
+            </Col>
+            <Col xs="12" sm="5" className="imgDetail">
+              <Row className="row">
+                <Col xs="12" sm="11">
+                  <center><ListGroup className="lits">
+                    <ListGroupItem className="List-Group-Item m "><h5>Related images</h5></ListGroupItem>
+                  </ListGroup></center>
+                </Col>
+              </Row>
+              <Row className="row">
+                  {colImg}  
+              </Row><br />
+              <Row className="row textDetail">
+                <Col xs="12" sm="11"><center>
+                  <h7>There are images you can know and they can have you have some choice</h7><br />
+                <h7>We always bring your great pictures.</h7><br />
+                <h8>You just use house-image </h8>
+                      <h7>!!!</h7>
+                  </center>
+                </Col>
+              </Row>
           </Col>
         </Row><br /><p></p>
         <Row>

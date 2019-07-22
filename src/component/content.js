@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faThumbsUp, faHeart, faComment, faUser} from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'reactstrap';
-import {  Navbar, Nav, NavItem, NavLink, UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem } from 'reactstrap';
+import {  Navbar, Nav, NavItem, NavLink, UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem,Dropdown } from 'reactstrap';
 import { InputGroup, InputGroupAddon,Input, InputGroupText,Form,Collapse } from 'reactstrap';
 import { Button, Modal,ModalHeader, ModalBody,ModalFooter } from 'reactstrap';
 import {NavLink as RRNavLink} from 'react-router-dom';
@@ -27,13 +27,14 @@ class Content extends React.Component{
       search: '',
       category: '',
       page: '',
+      order:'popular',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
- 
+    this.toggle = this.toggle.bind(this);
   }
-  apiSearch(){
-    fetch(API + '?key=' + key + '&q='+this.state.search + '&category=' + this.state.category + '&page='+this.state.page)
+  fetchAPI(){
+    fetch(API + '?key=' + key + '&q='+this.state.search + '&category=' + this.state.category + '&page='+this.state.page +'&order='+this.state.order)
     .then(response => response.json())
     .then(data => {
       console.log(data);/*******để kiểm tra dữ liệu(data=>vào trong kiểm tra=>console) lọc đã đúng chưa*********/
@@ -44,8 +45,7 @@ class Content extends React.Component{
   }
   componentDidMount(){
     /***fetch(API tức là gọi API*(+'?key=' + key + '&q'=> từ khóa của chức năng search// this.state.search.search--> là lấy từ hàm contructor phần thí.state được nhập từ bàn phím rong quá trình tìm kiếm  *****/
-    this.apiSearch()
- 
+    this.fetchAPI()
   }
   handleChange(event) {
     this.setState({
@@ -53,19 +53,25 @@ class Content extends React.Component{
     });
   }
   selectCaregory(category) {
-    this.setState({category}, () => {this.apiSearch()})
+    this.setState({category}, () => {this.fetchAPI()})
     // set giá trị cho category ( vì tên trung nhau nên viết 1 category thôi)// ' ()' => chờ để nó sử lý xong rồi mới chạy về hàm search 
   }
   selectPage(page){
-    this.setState({page}, () =>{this.apiSearch()})
+    this.setState({page}, () =>{this.fetchAPI()})
   }
-  
+  selectOrder(order){
+    this.setState({order}, () =>{this.fetchAPI()})
+  }
   handleSubmit (event) {
     event.preventDefault();
     // call search function 
-    this.apiSearch()
+    this.fetchAPI()
   } 
-  
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
   render(){
   console.log('hit', this.state.hits);/******kiểm tra giá trị của hit *******/
  /* chạy vòng for  this.state.hits.map (giá trị hit lấy từ API) */
@@ -90,12 +96,11 @@ class Content extends React.Component{
           </Link>
         </div>
       </Col>  
-  ));
-  
+  )); 
   console.log(5555,colImg);
-  let categories = ['travel', 'animate','science','education', 'river', 'mosel', 'health']
-  let pageNumber=['1','2','3','4','5','6','7','8','9','10','11']
-
+  let categories = ['travel', 'flower','science','education', 'river', 'mosel', 'health']
+  let pageNumber=['1','2','3','4','5','6']
+  let order =['popular','latest']             
   return(
     <Container fluid className="main">
       <div className="header">    
@@ -115,7 +120,7 @@ class Content extends React.Component{
             <div className="slogan">
               <center><p><h2>Stunning free images & royalty free stock</h2></p>
               <h5>Free images & royalty free stock for you</h5><br />
-              <Form  onSubmit ={this.handleSubmit}> 
+              <Form onSubmit ={this.handleSubmit}> 
                   <InputGroup>
                     <InputGroupAddon addonType="prepend">
                     <InputGroupText ><FontAwesomeIcon icon={faSearch} style={{ color: 'black' }} size="1,5x"/></InputGroupText> 
@@ -143,19 +148,19 @@ class Content extends React.Component{
             </div>
           </Col>
         </Row>
-        </div>
-      
+      </div>
       <div className="content"><br />
+        <Row className="dropdown" >
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+              <DropdownToggle  className="drop-toggle" caret>
+                {this.state.order}
+              </DropdownToggle>
+              <DropdownMenu  className="drop-toggle">
+              {order.map(itemOrder=>(<DropdownItem  key={itemOrder} onClick={this.selectOrder.bind(this, itemOrder)}>{itemOrder}</DropdownItem>))}  
+              </DropdownMenu>
+            </Dropdown>
+        </Row><p></p>
         <Row>
-        <div>
-          <Breadcrumb tag="nav" listTag="div">
-            <BreadcrumbItem tag="a" href="#">Images</BreadcrumbItem>
-            <BreadcrumbItem tag="a" href="#">Videos</BreadcrumbItem>
-          </Breadcrumb>
-        </div>
-        </Row>
-        <Row>
-        
          {this.state.hits.length===0 ? (
             <Col sm-12 md={{ size:6,offset:3}}>
               <div className="ogan">
@@ -183,7 +188,6 @@ class Content extends React.Component{
           </Col>
         </Row><br />
       </div>
-      
       <div className="footer">
         <Row>
           <Col sm-12 md={{ size:6,offset:3}}>
