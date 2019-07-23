@@ -3,12 +3,12 @@
 	/* background: no-repeat; */
 	/* background-size: cover; */
 /***************************************************menu letf top*********************************************************/
-.header .menu-left a:hover {
-	color: #fff;
+.header .menu-left li:hover {
+	color:black;
+	background-color: #fff
 	/* background-color:black; */
 }
-
-.header{
+.header{	
 	background: url("https://cdn.pixabay.com/index/2019/06/20/10-58-01-525_1440x480.jpg");
 	/* background: no-repeat; */
 	background-size: cover;
@@ -21,13 +21,7 @@
 }
 .header .bg-light {
 	background-color: transparent !important;
-
 }
-/* .header .navbar-light .navbar-nav .nav-link {
-
-	color: white;
-} */
-
 .header a {
 	color: #fff;
 }
@@ -45,7 +39,6 @@ h5 {
 h9 {
 	color: white;
 }
-
 .header .searchButton{
 	background-color: #fff;
 	border-radius: 2px;	
@@ -71,9 +64,8 @@ h9 a:hover {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-
 .txt {
-  width: 100%;
+  width: 96%;
   /*height: 100%;  full cả ảnh */
   background-color: black;
   position: absolute;
@@ -90,20 +82,22 @@ h9 a:hover {
   transition:ease-in-out 0.5s;
 }
 .conten-imga {
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-top: 6px;
+	/* padding-bottom: 0px; */
 	padding-left: 0 !important;
-	padding-right: 0 !important;
+	/* padding-left: 1px; */
+
+	padding-right: 0px;
 }
 span:hover {
 	cursor: context-menu;
 	color: orange;
 }
-
 .dropdown .drop-toggle {
 	/* white-space: nowrap; */
 	background-color: green;
 }
+
 /*************************************************************footer**************************************************************************/
 .footer{
 	background-color: black;
@@ -135,7 +129,6 @@ li{
 	padding-right: 0px;
 }
 /***********************************************************introduce****************************************************************/
-
 .header-intro{
 	background: url("https://cdn.pixabay.com/photo/2019/06/07/10/44/sunset-4257963__340.jpg");
 	/* background: no-repeat; */
@@ -151,8 +144,9 @@ li{
 	background-color: transparent !important;
 
 }
-.header-intro .menu-left a:hover {
-	color: #fff;
+.header-intro .menu-left li:hover {
+	color:black;
+	background-color: #fff
 	/* background-color: #fff */
 }
 .header-intro .navbar-light .navbar-nav .nav-link {
@@ -218,13 +212,14 @@ background-color: darkgreen;
 /***********************************************************help********************************************************************************/
 
 .header-help{
-	background: url("https://cdn.pixabay.com/photo/2019/06/12/11/03/boat-4269033__340.jpg");
+	background: url("https://cdn.pixabay.com/photo/2016/05/05/02/35/hot-air-ballons-1373167_960_720.jpg");
 	/* background: no-repeat; */
 	background-size: cover;
 	flex-flow: 1;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
+	
 	height: 500px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -232,8 +227,9 @@ background-color: darkgreen;
 	background-color: transparent !important;
 
 }
-.header-help .menu-left a:hover {
-	color: #fff;
+.header-help .menu-left li:hover {
+	color:black;
+	background-color: #fff
 	/* background-color: rgb(73, 73, 73)*/
 } 
 .header-help .navbar-light .navbar-nav .nav-link {
@@ -282,8 +278,9 @@ background-color: darkgreen;
 	color: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 }
-.Contact-header .menu-left a:hover {
-	color: #fff;
+.Contact-header .menu-left li:hover {
+	color:black;
+	background-color: #fff
 	/* background-color: #fff */
 }
 .Contact-header .searchButton{
@@ -325,17 +322,25 @@ background-color: darkgreen;
 .button{
 	top: 20px;
 }
+.button1{
+	margin-right: -6px;
+}
 .conten-imgDetai{
 	padding-left: 10px;
 }
 .imgDetail .row{
 	align-content: center;
 }
+Button{
+	margin-right: 0!important;
+}
 .button Button{
 	color: #fff;
 	background-color: green;
 	border-color: #6c757d;
+	margin-left: 0px;
 }
+
 .lits .List-Group-Item  {
 	background-color: green;
 }

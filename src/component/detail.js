@@ -4,6 +4,7 @@ import {} from 'reactstrap';
 import { InputGroup, InputGroupAddon, InputGroupText, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { ListGroup, ListGroupItem} from 'reactstrap';
+import{DropdownMenu, DropdownItem} from 'reactstrap'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import content from './content';
 import { saveAs } from 'file-saver';
@@ -21,6 +22,7 @@ export default class Detail extends React.Component{
       hit: null,
       search: '',
     };
+    this.toggle = this.toggle.bind(this);
   }
   fetchImagedetail(){
     let id = this.props.match && this.props.match.params ? this.props.match.params.id : '';
@@ -61,6 +63,11 @@ export default class Detail extends React.Component{
     this.fetchImagedetail()
     this.FetchRelatedimages()
   }
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
  
   render(){
    /*.slice(0,9)= limit lấy tối đa 9 ảnh từ vị trí là 0 */
@@ -93,9 +100,9 @@ export default class Detail extends React.Component{
     return(
       <Container fluid className='mainDetail'>
         <Row className="headerDetail">
-          <Col xs="6" sm="3" className="logo">
+          <Col xs="6" sm="2" className="logo">
             <a href="true" className="logo">
-              <img alt="Logo" src="https://www.freelogodesign.org/file/app/client/thumb/be3e900d-eb2b-45a7-b567-1d365300558b_200x200.png?1560927344917" 
+              <img alt="Logo" src="https://www.freelogodesign.org/file/app/client/thumb/869e6e4d-4d7b-444e-95b6-cb2643b834bf_200x200.png?1563856579174"  
             style={{width: '100px', height: '100px'}} />
             </a>
           </Col>
@@ -110,8 +117,17 @@ export default class Detail extends React.Component{
             </InputGroupAddon>
           </InputGroup>
           </Col>
-          <Col xs="6" sm="3" className="button">
-            <Link to='/'><Button >Back</Button></Link>
+          <Col xs="3" sm="3" className="button m" >
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="dropdown">
+              <DropdownToggle  className="drop-toggle-m " caret>Come Back
+              </DropdownToggle>
+              <DropdownMenu  className="drop-toggle">
+                <DropdownItem ><Link to='/'>Home</Link></DropdownItem>  
+                <DropdownItem ><Link to='/introduce'> Introduce</Link></DropdownItem>  
+                <DropdownItem ><Link to='/help'> Help</Link></DropdownItem>  
+                <DropdownItem ><Link to='/contact'> Contact</Link></DropdownItem>  
+              </DropdownMenu>
+            </Dropdown>
           </Col>
         </Row><br /><br />
         <Row>

@@ -107,7 +107,7 @@ class Content extends React.Component{
         <Row>
          <Col xs="6" className="set_logo">
          <a href="true" className="logo">
-           <img alt="Logo" src="https://www.freelogodesign.org/file/app/client/thumb/be3e900d-eb2b-45a7-b567-1d365300558b_200x200.png?1560927344917" 
+           <img alt="Logo" src="https://www.freelogodesign.org/file/app/client/thumb/869e6e4d-4d7b-444e-95b6-cb2643b834bf_200x200.png?1563856579174" 
          style={{width: '150px', height: '150px'}} />
          </a>
           </Col>
@@ -128,7 +128,7 @@ class Content extends React.Component{
                     </InputGroupAddon>  
                     <Input placeholder="What is the photo you want ?" type="search" name="search" id="exampleSearch" value={this.state.search} onChange={this.handleChange}/>
                     <InputGroupAddon addonType="append">
-                      <InputGroupText>image</InputGroupText>
+                      <InputGroupText>Search</InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
                   <h9>Popular images:  
