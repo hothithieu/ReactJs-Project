@@ -86,15 +86,6 @@ h9 a:hover {
 	/* padding-bottom: 0px; */
 	padding-left: 0 !important;
 	/* padding-left: 1px; */
-
-	padding-right: 0px;
-}
-span:hover {
-	cursor: context-menu;
-	color: orange;
-}
-.dropdown .drop-toggle {
-	/* white-space: nowrap; */
 	background-color: green;
 }
 
